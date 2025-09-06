@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>60% Off Promo</title>
+  <link rel="stylesheet" href="styled.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="split">
+    <!-- LEFT: Offer -->
+    <section class="offer" aria-labelledby="offer-title">
+      <div class="offer-card">
+        <div class="leaf" aria-hidden="true">
+          <!-- simple leaf icon -->
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 3c-7.5 1.5-12 6-13.5 7.5S4.5 13.5 3 21c7.5-1.5 12-6 13.5-7.5S19.5 7.5 21 3Z"/>
+            <path d="M9 15l-3-3"/>
+          </svg>
+        </div>
+
+        <h1 id="offer-title" class="headline">
+          You’ve got <span class="accent">50% OFF</span>
+        </h1>
+        <p class="subcopy">See it before it’s gone.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#claim" role="button" aria-label="Claim 10 percent off">Claim 50% Off</a>
+          <button class="btn btn-ghost" type="button">No, thanks</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Visual / tagline -->
+    <section class="visual" aria-label="Product preview">
+      <!-- If you want separate positioned images instead of a single background,
+           you can place <img> elements inside this .visual area -->
+      <div class="tagline">
+        <span>Gold card</span>
+        <strong>investors</strong>
+      </div>
+      <div class="credit" aria-hidden="true"></div>
+    </section>
+  </main>
+</body>
+</html>

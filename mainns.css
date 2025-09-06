@@ -1,0 +1,83 @@
+/* ---------- Base ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+
+:root { --topbar-h: 40px; }
+
+/* ---------- Top Bar (fixed, no overlap) ---------- */
+.top-bar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--topbar-h);
+  background: rgba(244,244,244,0.95);
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 20px;
+  font-size: 14px;
+  z-index: 1000;
+}
+.top-bar .social a{
+  margin-left:10px; text-decoration:none; color:#b22222; font-weight:bold;
+}
+
+/* Reserve space so content starts below the fixed bar */
+body { padding-top: var(--topbar-h); }
+
+/* ---------- Header (normal flow, not absolute) ---------- */
+.site-header{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 12px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  background: rgba(255,255,255,0.9);
+}
+.logo{
+  font-size: 22px; font-weight: 700; letter-spacing:.5px;
+}
+.main-nav{
+  display:flex; gap: 15px; flex-wrap: wrap; justify-content:center;
+}
+.main-nav a{
+  text-decoration:none; color:#333; font-weight:500;
+}
+.main-nav a:hover{ color:#b22222; }
+
+.actions{
+  display:flex; align-items:center; gap: 12px;
+}
+.btn-login{
+  background:#b22222; color:#fff; padding:8px 15px; border-radius:4px;
+  text-decoration:none; font-size:14px;
+}
+.cart{ font-size:20px; }
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  background: url('image.png') no-repeat center/cover;
+  height: 100vh; width: 100%;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; padding: 0 20px; color:#fff;
+}
+.hero h1{
+  font-size:48px; font-weight:700; margin-bottom:20px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,.6);
+}
+.hero .btn{
+  border:2px solid #fff; padding:12px 25px; background:transparent;
+  color:#fff; text-decoration:none; font-size:16px; transition:.3s;
+}
+.hero .btn:hover{ background:#fff; color:#333; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .site-header{ flex-wrap: wrap; }
+  .logo{ width:100%; text-align:center; margin-bottom:6px; }
+  .main-nav{ width:100%; justify-content:center; }
+  .actions{ width:100%; justify-content:center; }
+}
+@media (max-width: 768px){
+  .top-bar{ font-size:12px; padding:0 10px; }
+  .hero h1{ font-size:28px; }
+  .hero .btn{ font-size:14px; padding:10px 20px; }
+}

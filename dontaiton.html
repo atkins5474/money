@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Carousel</title>
+  <link rel="stylesheet" href="don.css">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <section class="carousel">
+    <!-- Gaming PC -->
+    <div class="card">
+      <div class="card-tag">Gaming pc</div>
+      <img src="pic.png" alt="Frontend Frameworks">
+      <div class="card-content">
+        <h3>enter for pc</h3>
+        <p>Winners will be contacted by email and announced on our Instagram!<br>
+        📅 Giveaway ends October 15 — don’t miss out!<br>
+        🎟️ Each person can enter up to 2 times!</p>
+        <button class="read-btn" id="checkout-button-10">10.00$</button>
+      </div>
+    </div>
+
+    <!-- Starbucks -->
+    <div class="card">
+      <div class="card-tag">100$StarBucks</div>
+      <img src="star.png" alt="AI User Experience Design">
+      <div class="card-content">
+        <h3>enter for 100$ gift card</h3>
+        <p>Winners will be contacted by email and announced on our Instagram!<br>
+        📅 Giveaway ends October 15 — don’t miss out!<br>
+        🎟️ Each person can enter up to 2 times!</p>
+        <button class="read-btn" id="checkout-button-1">1.00$</button>
+      </div>
+    </div>
+
+    <!-- 3D Printer -->
+    <div class="card">
+      <div class="card-tag">3d printer</div>
+      <img src="3d.png" alt="Workspace Design">
+      <div class="card-content">
+        <h3>enter for a 3d printer</h3>
+        <p>Winners will be contacted by email and announced on our Instagram!<br>
+        📅 Giveaway ends October 15 — don’t miss out!<br>
+        🎟️ Each person can enter up to 2 times!</p>
+        <button class="read-btn" id="checkout-button-5">5.00$</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const stripe = Stripe("pk_live_51S49ZuIQAOGK4GVCrsljjOMilSpv5a72Ua79xX5JXU9XUxkQNbxCF8zIh2duplrWQeWkr0xhpfD3O5LrHf1gIII300Q8micxXb"); // Replace with your Stripe publishable key
+
+    document.getElementById("checkout-button-10").addEventListener("click", () => {
+      stripe.redirectToCheckout({
+        lineItems: [{ price: "price_10DOLLAR_ID", quantity: 1 }],
+        mode: "payment",
+        successUrl: "https://yourwebsite.com/success",
+        cancelUrl: "https://yourwebsite.com/cancel"
+      });
+    });
+
+    document.getElementById("checkout-button-1").addEventListener("click", () => {
+      stripe.redirectToCheckout({
+        lineItems: [{ price: "price_1S49phIQAOGK4GVCKgiNf8P3", quantity: 1 }],
+        mode: "payment",
+        successUrl: "https://atkins5474.github.io/real/main.html",
+        cancelUrl: "https://atkins5474.github.io/real/main.html"
+      });
+    });
+
+    document.getElementById("checkout-button-5").addEventListener("click", () => {
+      stripe.redirectToCheckout({
+        lineItems: [{ price: "price_5DOLLAR_ID", quantity: 1 }],
+        mode: "payment",
+        successUrl: "https://yourwebsite.com/success",
+        cancelUrl: "https://yourwebsite.com/cancel"
+      });
+    });
+  </script>
+</body>
+</html>
